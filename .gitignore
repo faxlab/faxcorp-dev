@@ -1,0 +1,13 @@
+# Variations and picker
+v*.html
+picker.html
+
+# Claude
+.claude/
+
+# Node
+node_modules/
+
+# OS
+Thumbs.db
+.DS_Store
