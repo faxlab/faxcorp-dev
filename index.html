@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAXCORP</title>
-<meta name="description" content="FAXCORP — real-time graphics, Unreal Engine tools and games. Kaunas, Lithuania.">
+<meta name="description" content="FAXCORP is a one-person studio for real-time graphics — Unreal Engine tools, game environments and small games.">
 <link rel="canonical" href="https://faxcorp.dev/">
-<meta name="theme-color" content="#0e0e0e">
+<meta name="theme-color" content="#101012">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FAXCORP">
 <meta property="og:url" content="https://faxcorp.dev/">
 <meta property="og:title" content="FAXCORP">
-<meta property="og:description" content="Real-time graphics, Unreal Engine tools and games. Kaunas, Lithuania.">
+<meta property="og:description" content="A one-person studio for real-time graphics — Unreal Engine tools, game environments and small games.">
 <meta property="og:image" content="https://faxcorp.dev/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,68 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/img/icon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/style.css">
+<style>
+  :root { --bg:#101012; --panel:#0b0b0d; --text:#e9e9ec; --muted:#8b8b93; --dim:#56565e; --line:#242428; --accent:#6ee7b7;
+          --mono: ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
+          --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:14.5px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  img { display:block; max-width:100%; height:auto; }
+
+  .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
+
+  /* header */
+  .top { padding:40px 0 30px; }
+  .top .brand { font-weight:800; letter-spacing:0.22em; font-size:1.05rem; }
+
+  /* sections */
+  section + section { margin-top:44px; }
+  .head { display:flex; align-items:baseline; justify-content:space-between; gap:14px; padding-bottom:9px; border-bottom:1px solid var(--line); margin-bottom:16px; }
+  .head h2 { font-family:var(--mono); font-size:0.7rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); }
+
+  /* about */
+  .lead { font-size:1.05rem; color:var(--text); max-width:62ch; }
+  .key { display:block; margin-top:18px; border:1px solid var(--line); overflow:hidden; }
+  .key img { width:100%; aspect-ratio:3/1; object-fit:cover; object-position:50% 35%; }
+
+  /* item blocks */
+  .item { display:grid; grid-template-columns:220px 1fr; gap:20px; padding:16px; border:1px solid var(--line); background:var(--panel); }
+  .item + .item { margin-top:10px; }
+  .item:hover { border-color:#33333a; }
+  .item .shot { border:1px solid var(--line); overflow:hidden; }
+  .item .shot img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+  .item h3 { font-size:1.02rem; font-weight:700; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .item p { color:var(--muted); font-size:0.88rem; margin-top:7px; }
+  .item .btns { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+  .item .btns a { font-family:var(--mono); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; border:1px solid var(--line); padding:6px 11px; color:var(--muted); }
+  .item .btns a:hover { border-color:var(--accent); color:var(--accent); }
+
+  /* grid */
+  .g { display:grid; gap:8px; grid-template-columns:repeat(4,1fr); margin-top:10px; }
+  .g a { display:block; border:1px solid var(--line); background:#000; overflow:hidden; }
+  .g a:hover { border-color:var(--accent); }
+  .g img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+  .g .lbl { display:block; padding:7px 9px; font-size:0.76rem; color:var(--muted); background:var(--panel); }
+  .g .lbl small { display:block; color:var(--dim); font-size:0.72rem; }
+  .g a:hover .lbl { color:var(--text); }
+
+  /* footer */
+  footer { margin-top:52px; padding:22px 0 48px; border-top:1px solid var(--line); }
+  footer .links { display:flex; flex-wrap:wrap; gap:8px 20px; }
+  footer .links a { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  footer .links a:hover { color:var(--accent); }
+  footer .legal { margin-top:16px; font-size:0.78rem; color:var(--dim); display:flex; flex-wrap:wrap; gap:6px 16px; }
+  footer .legal a { color:var(--muted); }
+  footer .legal a:hover { color:var(--accent); }
+
+  @media (max-width:720px) {
+    .top { padding:30px 0 22px; }
+    .item { grid-template-columns:1fr; }
+    .key img { aspect-ratio:2/1; }
+    .g { grid-template-columns:repeat(2,1fr); }
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,7 +91,6 @@
   "url": "https://faxcorp.dev/",
   "logo": "https://faxcorp.dev/img/icon-512.png",
   "email": "office@faxcorp.dev",
-  "telephone": "+37064489883",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Europos pr. 34-47",
@@ -38,14 +98,13 @@
     "postalCode": "LT-46370",
     "addressCountry": "LT"
   },
-  "founder": { "@type": "Person", "name": "Kajus Janulevičius" },
   "sameAs": [
     "https://github.com/faxlab",
     "https://www.youtube.com/@Cinema-Fax",
-    "https://www.youtube.com/@fax-lab-3d",
     "https://www.artstation.com/faxlab3d",
     "https://sketchfab.com/FaxLab3D",
     "https://www.fab.com/sellers/FaxLab3D",
+    "https://insertnocoins.itch.io",
     "https://x.com/f4xc0rp"
   ]
 }
@@ -55,106 +114,87 @@
 <div class="wrap">
 
   <header class="top">
-    <a class="brand" href="/">FAXCORP</a>
-    <nav>
-      <a href="https://www.fab.com/sellers/FaxLab3D" target="_blank" rel="noopener">Fab</a>
-      <a href="https://store.steampowered.com/search/?developer=FAXCORP" target="_blank" rel="noopener">Steam</a>
-      <a href="https://github.com/faxlab" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.youtube.com/@Cinema-Fax" target="_blank" rel="noopener">YouTube</a>
-      <a href="mailto:hello@faxcorp.dev">Contact</a>
-    </nav>
+    <div class="brand">FAXCORP</div>
   </header>
 
-  <a class="key" href="/img/art/kowloon-street.webp" target="_blank">
-    <img src="/img/hero.webp" alt="Kowloon block, Unreal Engine" width="1920" height="1080" fetchpriority="high">
-  </a>
+  <main>
 
-  <main class="entries">
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="head"><h2>About</h2></div>
+      <p class="lead">FAXCORP is a one-person studio for real-time graphics — Unreal Engine tools, game environments and small games.</p>
+      <a class="key" href="/img/key.webp" target="_blank">
+        <img src="/img/key.webp" alt="Neon alley" width="1920" height="1080" fetchpriority="high">
+      </a>
+    </section>
 
-    <article class="entry">
-      <a class="thumb" href="https://zoneq.app" target="_blank" rel="noopener"><img src="/img/zoneq.webp" alt="zoneq" width="960" height="540"></a>
-      <div>
-        <div class="head"><h2><a href="https://zoneq.app" target="_blank" rel="noopener">zoneq</a></h2><span class="date">coming soon</span></div>
-        <div class="meta">Audio-reactive visuals · browser, wallpaper, OBS</div>
-        <div class="links"><a href="https://zoneq.app" target="_blank" rel="noopener">zoneq.app</a></div>
+    <!-- GAMES -->
+    <section id="games">
+      <div class="head"><h2>Games</h2></div>
+
+      <div class="item">
+        <a class="shot" href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener"><img src="/img/my-paper-plane.webp" alt="My Paper Plane Is Better" loading="lazy"></a>
+        <div>
+          <h3>My Paper Plane Is Better</h3>
+          <p>Throw a paper plane through a city. Your flight becomes a track and everyone races your line. Free demo at Steam Next Fest, October 19 – 26.</p>
+          <div class="btns">
+            <a href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener">Steam</a>
+          </div>
+        </div>
       </div>
-    </article>
 
-    <article class="entry">
-      <a class="thumb" href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener"><img src="/img/my-paper-plane.webp" alt="My Paper Plane Is Better" width="616" height="346" loading="lazy"></a>
-      <div>
-        <div class="head"><h2><a href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener">My Paper Plane Is Better</a></h2><span class="date">November 2026</span></div>
-        <div class="meta">Steam · demo at Next Fest, October 19 – 26</div>
-        <div class="links"><a href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener">Steam</a><a href="/paperplane/">Game page</a></div>
+      <div class="g">
+        <a href="https://store.steampowered.com/app/2230740/GAZOLINAS/" target="_blank" rel="noopener"><img src="/img/gazolinas.webp" alt="GAZOLINAS" loading="lazy"><span class="lbl">GAZOLINAS<small>Arcade racer · 2024</small></span></a>
+        <a href="https://store.steampowered.com/app/1368890/Hong_Kong_Obscure/" target="_blank" rel="noopener"><img src="/img/hong-kong-obscure.webp" alt="Hong Kong Obscure" loading="lazy"><span class="lbl">Hong Kong Obscure<small>VR · 2023</small></span></a>
+        <a href="https://store.steampowered.com/app/1819240/Short_Circuit/" target="_blank" rel="noopener"><img src="/img/short-circuit.webp" alt="Short Circuit" loading="lazy"><span class="lbl">Short Circuit<small>Free · 2023</small></span></a>
+        <a href="https://store.steampowered.com/app/905390/Drone_Spektra/" target="_blank" rel="noopener"><img src="/img/drone-spektra.webp" alt="Drone Spektra" loading="lazy"><span class="lbl">Drone Spektra<small>Drone sim · 2019</small></span></a>
       </div>
-    </article>
+    </section>
 
-    <article class="entry">
-      <a class="thumb" href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener"><img src="/img/spline-architect.webp" alt="Spline Architect" width="960" height="540" loading="lazy"></a>
-      <div>
-        <div class="head"><h2><a href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener">Spline Architect</a></h2><span class="date">v6 · 2026</span></div>
-        <div class="meta">Unreal Engine plugin · UE 5.5 – 5.8</div>
-        <div class="links"><a href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener">Fab</a><a href="https://faxlab.github.io/spline-architect-docs/" target="_blank" rel="noopener">Documentation</a></div>
-      </div>
-    </article>
+    <!-- TOOLS -->
+    <section id="tools">
+      <div class="head"><h2>Tools</h2></div>
 
-    <article class="entry">
-      <span class="thumb"><img src="/img/zero-trace.webp" alt="Zero Trace" width="960" height="540" loading="lazy"></span>
-      <div>
-        <div class="head"><h2>Zero Trace</h2><span class="date">in development</span></div>
-        <div class="meta">Game</div>
+      <div class="item">
+        <a class="shot" href="https://zoneq.app" target="_blank" rel="noopener"><img src="/img/zoneq.webp" alt="zoneq" loading="lazy"></a>
+        <div>
+          <h3>zoneq</h3>
+          <p>Audio-reactive visual sequencer. Build shader patches, publish with a link, run it in the browser, as a desktop wallpaper or as an OBS source.</p>
+          <div class="btns"><a href="https://zoneq.app" target="_blank" rel="noopener">zoneq.app</a></div>
+        </div>
       </div>
-    </article>
 
-    <article class="entry wide">
-      <div class="head"><h2><a href="https://www.fab.com/sellers/FaxLab3D" target="_blank" rel="noopener">Environments for Unreal Engine</a></h2><span class="date">2018 – 2026</span></div>
-      <div class="meta">12 products on Fab as FaxLab3D</div>
-      <div class="strip strip-3">
-        <a href="https://www.fab.com/listings/f1b7e6c6-7a13-4656-941c-183846a084ef" target="_blank" rel="noopener"><img src="/img/fab-drift-roads.webp" alt="Japanese Drift Roads Track Pack" width="960" height="540" loading="lazy"></a>
-        <a href="https://www.fab.com/listings/6631d4c8-0760-44b6-b031-d76d897ae961" target="_blank" rel="noopener"><img src="/img/fab-nuke-island.webp" alt="Nuke Island" width="867" height="488" loading="lazy"></a>
-        <a href="https://www.fab.com/listings/da5778da-a3ce-4e40-8a58-630b8a0f6e21" target="_blank" rel="noopener"><img src="/img/fab-aztec-rumble.webp" alt="Aztec Rumble Modular Environment" width="867" height="488" loading="lazy"></a>
-        <a href="https://www.fab.com/listings/875ef04b-a5ee-44a4-8f68-a5ed211d4bfb" target="_blank" rel="noopener"><img src="/img/fab-biohazard-arena.webp" alt="BioHazard Arena" width="867" height="488" loading="lazy"></a>
-        <a href="https://www.fab.com/listings/37a51114-eec6-4c29-9f4b-839b594d32c8" target="_blank" rel="noopener"><img src="/img/fab-cambodian-temple.webp" alt="Cambodian Temple Complex" width="960" height="540" loading="lazy"></a>
-        <a href="https://www.fab.com/listings/1858ea76-aa91-4e20-8262-3032d8e1bc90" target="_blank" rel="noopener"><img src="/img/fab-soviet-military.webp" alt="Soviet military modular environment pack" width="867" height="488" loading="lazy"></a>
+      <div class="item">
+        <a class="shot" href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener"><img src="/img/spline-architect.webp" alt="Spline Architect" loading="lazy"></a>
+        <div>
+          <h3>Spline Architect</h3>
+          <p>Unreal Engine plugin for building along splines: walls, buildings, curves, street networks and PCG-ready city data.</p>
+          <div class="btns">
+            <a href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener">Get on Fab</a>
+            <a href="https://faxlab.github.io/spline-architect-docs/" target="_blank" rel="noopener">Docs</a>
+          </div>
+        </div>
       </div>
-    </article>
-
-    <article class="entry wide">
-      <div class="head"><h2><a href="https://store.steampowered.com/search/?publisher=Insert%20No%20Coins" target="_blank" rel="noopener">Earlier games</a></h2><span class="date">2019 – 2024</span></div>
-      <div class="meta">Released as Insert No Coins · GAZOLINAS, Hong Kong Obscure, Short Circuit, Drone Spektra</div>
-      <div class="strip strip-4">
-        <a href="https://store.steampowered.com/app/2230740/GAZOLINAS/" target="_blank" rel="noopener"><img src="/img/gazolinas.webp" alt="GAZOLINAS" width="616" height="346" loading="lazy"></a>
-        <a href="https://store.steampowered.com/app/1368890/Hong_Kong_Obscure/" target="_blank" rel="noopener"><img src="/img/hong-kong-obscure.webp" alt="Hong Kong Obscure" width="616" height="346" loading="lazy"></a>
-        <a href="https://store.steampowered.com/app/1819240/Short_Circuit/" target="_blank" rel="noopener"><img src="/img/short-circuit.webp" alt="Short Circuit" width="616" height="346" loading="lazy"></a>
-        <a href="https://store.steampowered.com/app/905390/Drone_Spektra/" target="_blank" rel="noopener"><img src="/img/drone-spektra.webp" alt="Drone Spektra" width="616" height="346" loading="lazy"></a>
-      </div>
-    </article>
-
-    <article class="entry wide">
-      <div class="head"><h2><a href="https://www.artstation.com/faxlab3d" target="_blank" rel="noopener">Art</a></h2><span class="date">2018 – 2023</span></div>
-      <div class="meta">ArtStation · Sketchfab</div>
-      <div class="strip strip-4 art">
-        <a href="/img/art/kowloon-street.webp" target="_blank"><img src="/img/art/kowloon-street-thumb.webp" alt="Kowloon street" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/kowloon-block.webp" target="_blank"><img src="/img/art/kowloon-block-thumb.webp" alt="Kowloon block" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/night-district.webp" target="_blank"><img src="/img/art/night-district-thumb.webp" alt="Night district" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/island.webp" target="_blank"><img src="/img/art/island-thumb.webp" alt="Island" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/crab.webp" target="_blank"><img src="/img/art/crab-thumb.webp" alt="Crab" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/ikarus.webp" target="_blank"><img src="/img/art/ikarus-thumb.webp" alt="Ikarus" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/toxic-train.webp" target="_blank"><img src="/img/art/toxic-train-thumb.webp" alt="Toxic train" width="900" height="600" loading="lazy"></a>
-        <a href="/img/art/faxbot.webp" target="_blank"><img src="/img/art/faxbot-thumb.webp" alt="Faxbot" width="900" height="600" loading="lazy"></a>
-      </div>
-    </article>
+    </section>
 
   </main>
 
-  <footer>
-    <div class="row">
-      <span>Kajus Janulevičius · Kaunas, Lithuania</span>
-      <span><a href="mailto:hello@faxcorp.dev">hello@faxcorp.dev</a> · <a href="https://www.artstation.com/faxlab3d" target="_blank" rel="noopener">ArtStation</a> · <a href="https://sketchfab.com/FaxLab3D" target="_blank" rel="noopener">Sketchfab</a> · <a href="https://insertnocoins.itch.io" target="_blank" rel="noopener">itch.io</a> · <a href="https://x.com/f4xc0rp" target="_blank" rel="noopener">X</a></span>
+  <footer id="links">
+    <div class="links">
+      <a href="mailto:hello@faxcorp.dev">hello@faxcorp.dev</a>
+      <a href="https://www.fab.com/sellers/FaxLab3D" target="_blank" rel="noopener">Fab</a>
+      <a href="https://store.steampowered.com/search/?developer=FAXCORP" target="_blank" rel="noopener">Steam</a>
+      <a href="https://github.com/faxlab" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.artstation.com/faxlab3d" target="_blank" rel="noopener">ArtStation</a>
+      <a href="https://sketchfab.com/FaxLab3D" target="_blank" rel="noopener">Sketchfab</a>
+      <a href="https://www.youtube.com/@Cinema-Fax" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://insertnocoins.itch.io" target="_blank" rel="noopener">itch.io</a>
+      <a href="https://x.com/f4xc0rp" target="_blank" rel="noopener">X</a>
     </div>
-    <div class="row">
-      <span>&copy; 2026 MB „Faxcorp“</span>
-      <span><a href="/company/">Company details</a> · <a href="/paperplane/privacy/">Privacy</a> · No cookies</span>
+    <div class="legal">
+      <span>© 2026 MB „Faxcorp“</span>
+      <span><a href="/company/">Company details</a></span>
+      <span><a href="/paperplane/privacy/">Privacy</a></span>
     </div>
   </footer>
 

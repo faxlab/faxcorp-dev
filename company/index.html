@@ -4,55 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Company details — FAXCORP</title>
-<meta name="description" content="Company details of MB Faxcorp, Kaunas, Lithuania. Rekvizitai.">
+<meta name="description" content="Company details of MB Faxcorp, Kaunas, Lithuania.">
 <link rel="canonical" href="https://faxcorp.dev/company/">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#101012">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/img/icon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/style.css">
+<style>
+  :root { --bg:#101012; --panel:#0b0b0d; --text:#e9e9ec; --muted:#8b8b93; --dim:#56565e; --line:#242428; --accent:#6ee7b7;
+          --mono: ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
+          --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:14.5px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
+  .top { padding:40px 0 30px; }
+  .top a { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+  .top a:hover { color:var(--accent); }
+  h1 { font-family:var(--mono); font-size:0.7rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted);
+       padding-bottom:9px; border-bottom:1px solid var(--line); margin-bottom:16px; }
+  dl { display:grid; grid-template-columns:200px 1fr; column-gap:24px; border:1px solid var(--line); background:var(--panel); padding:4px 22px; }
+  dt { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); padding:12px 0; border-top:1px solid var(--line); }
+  dd { padding:10px 0; border-top:1px solid var(--line); font-size:0.92rem; }
+  dt:first-of-type, dd:first-of-type { border-top:0; }
+  dd small { display:block; color:var(--muted); font-size:0.78rem; }
+  dd a { color:var(--accent); }
+  dd a:hover { text-decoration:underline; }
+  footer { margin-top:52px; padding:22px 0 48px; border-top:1px solid var(--line); font-size:0.78rem; color:var(--dim);
+           display:flex; flex-wrap:wrap; gap:6px 16px; }
+  footer a { color:var(--muted); }
+  footer a:hover { color:var(--accent); }
+  @media (max-width:720px) {
+    .top { padding:30px 0 22px; }
+    dl { grid-template-columns:1fr; }
+    dt { padding-bottom:2px; }
+    dd { border-top:0; padding-top:2px; }
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-<main>
-  <section class="section page">
-    <div class="wrap">
-      <a class="kicker" href="/">← FAXCORP</a>
-      <h1>Company details</h1>
-      <div class="biz">
-        <dl>
-          <dt>Legal name</dt>
-          <dd>MB „Faxcorp“ <small>Mažoji bendrija (small partnership), Lithuania</small></dd>
-          <dt>Company code</dt>
-          <dd>308119319</dd>
-          <dt>Registered office</dt>
-          <dd>Europos pr. 34-47, LT-46370 Kaunas, Lithuania</dd>
-          <dt>Register</dt>
-          <dd>Register of Legal Entities of the Republic of Lithuania <small>Juridinių asmenų registras, VĮ Registrų centras</small></dd>
-          <dt>VAT</dt>
-          <dd>Not registered for VAT</dd>
-          <dt>Director</dt>
-          <dd>Kajus Janulevičius</dd>
-          <dt>Email</dt>
-          <dd><a href="mailto:office@faxcorp.dev">office@faxcorp.dev</a></dd>
-          <dt>Phone</dt>
-          <dd><a href="tel:+37064489883">+370 644 89883</a></dd>
-          <dt>Privacy</dt>
-          <dd><a href="mailto:privacy@faxcorp.dev">privacy@faxcorp.dev</a></dd>
-          <dt>Activities</dt>
-          <dd>zoneq.app · FAXCORP games on Steam · FaxLab3D assets on Fab</dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-</main>
+  <header class="top"><a href="/">← FAXCORP</a></header>
 
-<footer>
-  <div class="wrap">
-    <span>&copy; 2026 MB „Faxcorp“</span>
-    <span><a href="/">faxcorp.dev</a> · <a href="/paperplane/privacy/">Privacy</a></span>
-  </div>
-</footer>
+  <main>
+    <h1>Company details</h1>
+    <dl>
+      <dt>Legal name</dt>
+      <dd>MB „Faxcorp“</dd>
+      <dt>Company code</dt>
+      <dd>308119319</dd>
+      <dt>Registered office</dt>
+      <dd>Europos pr. 34-47, LT-46370 Kaunas, Lithuania</dd>
+      <dt>Register</dt>
+      <dd>Register of Legal Entities of Lithuania</dd>
+      <dt>Email</dt>
+      <dd><a href="mailto:office@faxcorp.dev">office@faxcorp.dev</a></dd>
+    </dl>
+  </main>
 
+  <footer>
+    <span>© 2026 MB „Faxcorp“</span>
+    <span><a href="/">faxcorp.dev</a></span>
+    <span><a href="/paperplane/privacy/">Privacy</a></span>
+  </footer>
+
+</div>
 </body>
 </html>
