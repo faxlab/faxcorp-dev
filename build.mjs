@@ -21,8 +21,6 @@ const orgSchema = JSON.stringify({
   url: `${origin}/`,
   logo: `${origin}/img/icon-512.png`,
   email: "office@faxcorp.dev",
-  foundingLocation: "Kaunas, Lithuania",
-  address: { "@type": "PostalAddress", streetAddress: "Europos pr. 34-47", addressLocality: "Kaunas", postalCode: "LT-46370", addressCountry: "LT" },
   sameAs: [
     "https://github.com/faxlab",
     "https://store.steampowered.com/search/?developer=FAXCORP",
@@ -52,8 +50,8 @@ for (const file of readdirSync(join(root, "_src", "pages")).filter((f) => f.ends
   };
   let html = layout.replace("{{content}}", body);
   for (const values of [meta, computed]) for (const [key, value] of Object.entries(values)) html = html.replaceAll(`{{${key}}}`, value);
-  // The current page's tab is marked; the others are plain.
-  html = html.replace(/<li data-nav="([\w-]+)">/g, (_, name) => (name === meta.nav ? '<li class="current">' : "<li>"));
+  // The current page's link is marked; the others are plain.
+  html = html.replace(/<a data-nav="([\w-]+)"/g, (_, name) => (name === meta.nav ? '<a aria-current="page"' : "<a"));
   const missing = html.match(/\{\{\w+\}\}/);
   if (missing) throw new Error(`${file}: nothing fills ${missing[0]}`);
   if (file === "404.html") html = html.replace("<head>", '<head>\n<meta name="robots" content="noindex">');
