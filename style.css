@@ -1,103 +1,104 @@
-/* faxcorp.dev: one column, system fonts, light and dark from the visitor's system. No scripts, no web fonts, no cookies. */
+/* faxcorp.dev: a modern take on the syscap.net look - Verdana, compact type, gradient title bars, bevelled buttons.
+   Light and dark follow the visitor's system. No scripts, no web fonts, no cookies. */
 :root {
-  --bg: #fafafa; --surface: #ffffff; --text: #111113; --muted: #5f5f68; --faint: #8a8a93;
-  --line: #e6e6ea; --accent: #0f9f73; --accent-soft: #e5f6ef;
-  --radius: 12px; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+  --bg: #f6f6f4; --surface: #ffffff; --text: #111113; --muted: #555559; --faint: #7a7a80;
+  --line: #d9d9dc; --accent: #0b7a58; --accent-soft: #e6f4ee; --rule: #0f3d33;
+  --title-from: #0f3d33; --title-to: #5fae8e; --title-text: #ffffff;
+  --face-from: #ffffff; --face-to: #e4e4e0; --face-border: #9a9a98;
+  --radius: 6px;
+  --sans: Verdana, Tahoma, Geneva, system-ui, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "Lucida Console", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0d0d0f; --surface: #151518; --text: #ececf0; --muted: #a0a0aa; --faint: #6c6c76;
-    --line: #26262b; --accent: #6ee7b7; --accent-soft: #12271f;
-    --shadow: none;
+    --bg: #111214; --surface: #18191c; --text: #e2e3e6; --muted: #a0a3a8; --faint: #73767c;
+    --line: #2b2d31; --accent: #6ee7b7; --accent-soft: #15261f; --rule: #2f7a63;
+    --title-from: #0f3d33; --title-to: #2f7a63;
+    --face-from: #3a3d42; --face-to: #2a2c30; --face-border: #55585e;
   }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { color-scheme: light dark; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 13px/1.6 var(--sans); }
 a { color: inherit; text-decoration: none; }
-p a, td a, li a { color: var(--accent); }
-p a:hover, td a:hover, li a:hover { text-decoration: underline; }
+p a, .v a, .links a { color: var(--accent); }
+p a:hover, .v a:hover, .links a:hover { text-decoration: underline; }
 img { display: block; max-width: 100%; height: auto; }
 
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
 
-/* Header: wordmark and four links. */
-.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent);
-       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .18em; font-size: 15px; }
-.brand img { width: 28px; height: 28px; border-radius: 7px; }
-.nav { display: flex; gap: 4px; }
-.nav a { padding: 6px 12px; border-radius: 8px; font-size: 14px; color: var(--muted); }
+/* Header: wordmark and four links over a rule, like syscap.net. */
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 10px;
+             border-bottom: 2px solid var(--rule); }
+.brand { display: flex; align-items: center; gap: 9px; font: bold 20px Arial, Helvetica, sans-serif; letter-spacing: .12em; }
+.brand img { width: 30px; height: 30px; border-radius: 6px; }
+.nav { display: flex; gap: 2px; }
+.nav a { padding: 4px 10px; border-radius: 4px; color: var(--muted); }
 .nav a:hover { color: var(--text); background: var(--surface); }
-.nav a[aria-current="page"] { color: var(--text); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.nav a[aria-current="page"] { color: var(--text); font-weight: bold; }
 
-main { padding: 64px 0 32px; }
+main.wrap { padding-top: 24px; padding-bottom: 16px; }
 
 /* Text */
-.hero { max-width: 720px; margin-bottom: 56px; }
-h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 16px; font-weight: 750; }
-.lead { font-size: 18px; color: var(--muted); margin: 0; }
-h2 { font-size: 13px; font-family: var(--mono); font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
-     color: var(--faint); margin: 56px 0 20px; }
-h3 { font-size: 18px; margin: 0 0 4px; letter-spacing: -.01em; }
-p { margin: 0 0 12px; }
+.intro { color: var(--muted); margin: 0 0 22px; max-width: 640px; }
+h1 { font-size: 15px; font-weight: bold; color: var(--text); margin: 0 0 4px; }
+/* Section headings are the syscap title bar, with rounded ends. */
+h2 { font-size: 12px; font-weight: bold; color: var(--title-text); margin: 26px 0 12px; padding: 4px 10px; border-radius: 4px;
+     background: linear-gradient(to right, var(--title-from), var(--title-to)); }
+h1 + h2, .intro + h2 { margin-top: 0; }
+h3 { font-size: 14px; margin: 0 0 3px; }
+p { margin: 0 0 10px; }
 .muted { color: var(--muted); }
-.small { font-size: 14px; }
+.small { font-size: 12px; }
+.after { margin-top: 12px; }
 
 /* Cards */
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-.grid.four { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-        overflow: hidden; box-shadow: var(--shadow); transition: border-color .15s, transform .15s; }
-a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.grid.four { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+a.card:hover { border-color: var(--accent); }
 .card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--line); }
-.card .body { padding: 16px 18px 18px; }
-.card .meta { font-size: 13px; color: var(--faint); margin: 0 0 6px; }
-.card p { color: var(--muted); font-size: 15px; margin: 0; }
-.card .links { display: flex; gap: 16px; margin-top: 12px; font-size: 14px; }
-.card .links a { color: var(--accent); }
-.card .links a:hover { text-decoration: underline; }
+.card .body { padding: 10px 12px 12px; }
+.card .meta { font-size: 11px; color: var(--faint); margin: 0 0 3px; }
+.card p { color: var(--muted); margin: 0; }
+.card .links { display: flex; gap: 14px; margin-top: 8px; }
 
 /* A wide card: picture beside text. */
-.feature { display: grid; grid-template-columns: 1.1fr 1fr; }
+.feature { display: grid; grid-template-columns: 1.15fr 1fr; }
 .feature img { height: 100%; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--line); }
-.feature .body { padding: 28px; align-self: center; }
-.feature h3 { font-size: 24px; }
+.feature .body { padding: 18px 20px; align-self: center; }
+.feature h3 { font-size: 17px; }
 
-.button { display: inline-block; margin-top: 16px; padding: 9px 18px; border-radius: 999px; background: var(--text); color: var(--bg);
-          font-size: 14px; font-weight: 600; }
-.button:hover { opacity: .85; }
+/* The bevelled default button from syscap.net, softened. */
+.button { display: inline-block; margin-top: 12px; padding: 5px 16px; border-radius: 4px; font-weight: bold; color: var(--text);
+          background: linear-gradient(var(--face-from), var(--face-to)); border: 1px solid var(--face-border);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 1px 1px rgba(0,0,0,.08); }
+.button:hover { border-color: var(--accent); }
+.button:active { background: linear-gradient(var(--face-to), var(--face-from)); }
 
-/* Lists and tables */
+/* Label and value rows. */
 .rows { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.rows > div, .rows > a { display: flex; justify-content: space-between; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--line); }
+.rows > div, .rows > a { display: flex; justify-content: space-between; gap: 16px; padding: 7px 12px; border-top: 1px solid var(--line); }
 .rows > :first-child { border-top: 0; }
 .rows > a:hover { background: var(--accent-soft); }
 .rows .k { color: var(--muted); }
 .rows .v { text-align: right; }
-.rows .v a { color: var(--accent); }
 
 /* Footer */
-footer { border-top: 1px solid var(--line); margin-top: 48px; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 24px; padding-bottom: 40px;
-               font-size: 14px; color: var(--faint); }
-footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-top: 24px; padding-top: 10px; padding-bottom: 28px;
+               border-top: 1px solid var(--line); font-size: 11px; color: var(--faint); }
+footer nav { display: flex; flex-wrap: wrap; gap: 4px 14px; }
 footer a:hover { color: var(--text); }
 
 @media (max-width: 720px) {
-  main { padding-top: 40px; }
-  .nav a { padding: 6px 8px; }
   .feature { grid-template-columns: 1fr; }
   .feature img { border-right: 0; border-bottom: 1px solid var(--line); aspect-ratio: 16/9; }
-  .feature .body { padding: 18px; }
-  .rows > div, .rows > a { flex-direction: column; gap: 2px; }
+  .rows > div, .rows > a { flex-direction: column; gap: 0; }
   .rows .v { text-align: left; }
 }
-@media (max-width: 420px) {
-  .wrap { padding: 0 16px; }
+@media (max-width: 440px) {
+  .wrap { padding: 0 14px; }
   .brand span { display: none; }
+  .nav a { padding: 4px 7px; }
 }
