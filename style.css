@@ -1,0 +1,103 @@
+/* Website in the style of early-2000s software company sites, like syscap.net: fixed width, Windows 2000 boxes, Verdana,
+   bevelled buttons. Light by default; the same design in dark for visitors whose system uses dark mode.
+   No scripts, no web fonts, no cookies. */
+:root {
+  --page: #ffffff; --text: #000000; --muted: #555555; --faint: #666666;
+  --link: #0033cc; --visited: #663399; --hover: #cc0000;
+  --rule: #0f3d33; --line: #a0a0a0; --box: #f4f4f4; --box-border: #808080;
+  --title-from: #0f3d33; --title-to: #8fcfb5; --title-text: #ffffff;
+  --face: #d4d0c8; --face-text: #000000; --bevel-light: #ffffff; --bevel-dark: #404040; --bevel-mid: #808080; --bevel-soft: #dfdfdf;
+  --cell-border: #c0c0c0; --callout: #f1faf5; --heading: #0f3d33; --code: #4a3a00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #16181b; --text: #d4d6d9; --muted: #9aa0a6; --faint: #7d838a;
+    --link: #8ab4ff; --visited: #b9a2f0; --hover: #ff8f8f;
+    --rule: #2f7a63; --line: #3c4147; --box: #202327; --box-border: #4a4f55;
+    --title-from: #0f3d33; --title-to: #2f7a63; --title-text: #ffffff;
+    --face: #3b3e43; --face-text: #f0f0f0; --bevel-light: #6a6e74; --bevel-dark: #0c0d0e; --bevel-mid: #26282b; --bevel-soft: #4d5157;
+    --cell-border: #3a3f45; --callout: #1b2622; --heading: #8fcfb5; --code: #e3cf96;
+  }
+}
+
+body { margin: 0; padding: 12px 0 24px; background: var(--page); color: var(--text); font: 11px/1.5 Verdana, Tahoma, Geneva, sans-serif; }
+a:link { color: var(--link); }
+a:visited { color: var(--visited); }
+a:hover { color: var(--hover); }
+img { border: 0; }
+
+.page { width: 780px; margin: 0 auto; }
+
+/* Header: logo, name and the few links people look for first. */
+.header { display: flex; align-items: flex-end; justify-content: space-between; padding: 0 0 6px; border-bottom: 2px solid var(--rule); }
+.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text) !important; }
+.brand-name { font: bold 22px Arial, Helvetica, sans-serif; letter-spacing: 1px; }
+.brand-tag { display: block; font-size: 11px; color: var(--muted); letter-spacing: 0; font-weight: normal; }
+.header-links { padding-bottom: 2px; }
+.header-links a { margin-left: 10px; }
+
+.columns { display: flex; gap: 14px; margin-top: 12px; }
+.side { width: 160px; flex: none; }
+.main { flex: 1; min-width: 0; }
+
+/* Boxes with a Windows 2000 style title bar. */
+.box { border: 1px solid var(--box-border); background: var(--box); margin-bottom: 10px; }
+.box-title { background: linear-gradient(to right, var(--title-from), var(--title-to)); color: var(--title-text); font-weight: bold; padding: 2px 6px; }
+.box-body { padding: 6px 8px; }
+.box-body ul { margin: 0; padding: 0; list-style: none; }
+.box-body li { padding: 1px 0; }
+.box-body li.current a { color: var(--text); font-weight: bold; text-decoration: none; }
+
+h1 { font: bold 14px Verdana, Tahoma, sans-serif; color: var(--heading); margin: 0 0 8px; }
+h2 { font: bold 11px Verdana, Tahoma, sans-serif; color: var(--heading); margin: 16px 0 6px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+h3 { font: bold 11px Verdana, Tahoma, sans-serif; margin: 0 0 2px; }
+p { margin: 0 0 8px; }
+ul.features { margin: 0 0 8px; padding-left: 18px; list-style: square; }
+ul.features li { margin-bottom: 3px; }
+.note { color: var(--muted); }
+code { font: 11px "Lucida Console", "Courier New", monospace; color: var(--code); }
+
+/* A highlighted line with a bevelled button, like a dialog's default button. */
+.callout { border: 1px solid var(--box-border); background: var(--callout); padding: 8px 10px; margin: 0 0 12px; display: flex; align-items: center; gap: 12px; }
+.button { display: inline-block; padding: 4px 14px; background: var(--face); color: var(--face-text) !important; text-decoration: none; font-weight: bold; white-space: nowrap;
+  border: 2px solid; border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: inset -1px -1px var(--bevel-mid), inset 1px 1px var(--bevel-soft); }
+.button:active { border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark); box-shadow: inset 1px 1px var(--bevel-mid); }
+
+/* Products and games: a framed picture beside a few lines of text. */
+.entry { display: flex; gap: 10px; margin: 0 0 12px; }
+.entry .shot { flex: none; width: 160px; }
+.entry .shot img { width: 160px; height: 90px; object-fit: cover; }
+.entry .text { min-width: 0; }
+.entry .meta { color: var(--muted); margin: 0 0 4px; }
+.entry .links a { margin-right: 10px; }
+.shot { border: 1px solid var(--box-border); padding: 3px; background: var(--page); display: inline-block; }
+.shot img { display: block; max-width: 100%; height: auto; }
+
+table.list { border-collapse: collapse; width: 100%; margin: 0 0 8px; }
+table.list th { background: var(--face); color: var(--face-text); text-align: left; border: 1px solid var(--box-border); padding: 3px 6px; font-weight: bold; }
+table.list td { border: 1px solid var(--cell-border); padding: 3px 6px; vertical-align: top; }
+
+/* Company details: label and value rows. */
+table.facts { border-collapse: collapse; width: 100%; margin: 0 0 8px; }
+table.facts th { width: 150px; text-align: left; font-weight: bold; background: var(--box); border: 1px solid var(--cell-border); padding: 3px 6px; vertical-align: top; }
+table.facts td { border: 1px solid var(--cell-border); padding: 3px 6px; }
+
+dl.news dt { font-weight: bold; margin-top: 6px; }
+dl.news .date { margin-right: 6px; }
+dl.news dd { margin: 0 0 4px 0; }
+
+.footer { margin-top: 18px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--faint); font-size: 10px; text-align: center; }
+
+/* Phones: the same page, stacked. */
+@media (max-width: 800px) {
+  .page { width: auto; margin: 0 10px; }
+  .columns { flex-direction: column-reverse; }
+  .side { width: auto; }
+  .header { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .header-links a { margin: 0 10px 0 0; }
+  .callout { flex-direction: column; align-items: flex-start; }
+  .entry { flex-direction: column; }
+  .entry .shot, .entry .shot img { width: auto; max-width: 100%; height: auto; }
+  table.facts th { width: 110px; }
+}

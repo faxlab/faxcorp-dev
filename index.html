@@ -1,203 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAXCORP</title>
-<meta name="description" content="FAXCORP is an independent one-person studio for real-time graphics - Unreal Engine tools, game environments and small games.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>FAXCORP - software, Unreal Engine tools and games</title>
+<meta name="description" content="FAXCORP is a small independent software studio in Kaunas, Lithuania. It makes SysCap, zoneq, Spline Architect, TopoTopo and games on Steam.">
 <link rel="canonical" href="https://faxcorp.dev/">
-<meta name="theme-color" content="#101012">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FAXCORP">
+<meta property="og:title" content="FAXCORP - software, Unreal Engine tools and games">
+<meta property="og:description" content="FAXCORP is a small independent software studio in Kaunas, Lithuania. It makes SysCap, zoneq, Spline Architect, TopoTopo and games on Steam.">
 <meta property="og:url" content="https://faxcorp.dev/">
-<meta property="og:title" content="FAXCORP">
-<meta property="og:description" content="An independent one-person studio for real-time graphics - Unreal Engine tools, game environments and small games.">
 <meta property="og:image" content="https://faxcorp.dev/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@f4xc0rp">
+<link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/img/icon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<style>
-  :root { --bg:#101012; --panel:#0b0b0d; --text:#e9e9ec; --muted:#8b8b93; --dim:#56565e; --line:#242428; --accent:#6ee7b7;
-          --mono: ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
-          --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
-  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:14.5px; line-height:1.55; -webkit-font-smoothing:antialiased; }
-  a { color:inherit; text-decoration:none; }
-  img { display:block; max-width:100%; height:auto; }
-
-  .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
-
-  /* header */
-  .top { padding:40px 0 30px; }
-  .top .brand { font-weight:800; letter-spacing:0.22em; font-size:1.05rem; }
-
-  /* sections */
-  section + section { margin-top:44px; }
-  .head { display:flex; align-items:baseline; justify-content:space-between; gap:14px; padding-bottom:9px; border-bottom:1px solid var(--line); margin-bottom:16px; }
-  .head h2 { font-family:var(--mono); font-size:0.7rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); }
-
-  /* about */
-  .lead { font-size:1.05rem; color:var(--text); max-width:62ch; }
-  .key { display:block; margin-top:18px; border:1px solid var(--line); overflow:hidden; }
-  .key img { width:100%; aspect-ratio:3/1; object-fit:cover; object-position:50% 35%; }
-
-  /* item blocks */
-  .item { display:grid; grid-template-columns:220px 1fr; gap:20px; padding:16px; border:1px solid var(--line); background:var(--panel); }
-  .item + .item { margin-top:10px; }
-  .item:hover { border-color:#33333a; }
-  .item .shot { border:1px solid var(--line); overflow:hidden; }
-  .item .shot img { width:100%; aspect-ratio:16/9; object-fit:cover; }
-  .item h3 { font-size:1.02rem; font-weight:700; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-  .item p { color:var(--muted); font-size:0.88rem; margin-top:7px; }
-  .item .btns { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
-  .item .btns a { font-family:var(--mono); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; border:1px solid var(--line); padding:6px 11px; color:var(--muted); }
-  .item .btns a:hover { border-color:var(--accent); color:var(--accent); }
-
-  /* grid */
-  .g { display:grid; gap:8px; grid-template-columns:repeat(4,1fr); margin-top:10px; }
-  .g a { display:block; border:1px solid var(--line); background:#000; overflow:hidden; }
-  .g a:hover { border-color:var(--accent); }
-  .g img { width:100%; aspect-ratio:16/9; object-fit:cover; }
-  .g .lbl { display:block; padding:7px 9px; font-size:0.76rem; color:var(--muted); background:var(--panel); }
-  .g .lbl small { display:block; color:var(--dim); font-size:0.72rem; }
-  .g a:hover .lbl { color:var(--text); }
-
-  /* footer */
-  footer { margin-top:52px; padding:22px 0 48px; border-top:1px solid var(--line); }
-  footer .links { display:flex; flex-wrap:wrap; gap:8px 20px; }
-  footer .links a { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
-  footer .links a:hover { color:var(--accent); }
-  footer .legal { margin-top:16px; font-size:0.78rem; color:var(--dim); display:flex; flex-wrap:wrap; gap:6px 16px; }
-  footer .legal a { color:var(--muted); }
-  footer .legal a:hover { color:var(--accent); }
-
-  @media (max-width:720px) {
-    .top { padding:30px 0 22px; }
-    .item { grid-template-columns:1fr; }
-    .key img { aspect-ratio:2/1; }
-    .g { grid-template-columns:repeat(2,1fr); }
-  }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "FAXCORP",
-  "legalName": "MB Faxcorp",
-  "url": "https://faxcorp.dev/",
-  "logo": "https://faxcorp.dev/img/icon-512.png",
-  "email": "office@faxcorp.dev",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Europos pr. 34-47",
-    "addressLocality": "Kaunas",
-    "postalCode": "LT-46370",
-    "addressCountry": "LT"
-  },
-  "sameAs": [
-    "https://github.com/faxlab",
-    "https://www.youtube.com/@Cinema-Fax",
-    "https://www.artstation.com/faxlab3d",
-    "https://sketchfab.com/FaxLab3D",
-    "https://www.fab.com/sellers/FaxLab3D",
-    "https://insertnocoins.itch.io",
-    "https://x.com/f4xc0rp"
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"FAXCORP","legalName":"MB Faxcorp","url":"https://faxcorp.dev/","logo":"https://faxcorp.dev/img/icon-512.png","email":"office@faxcorp.dev","foundingLocation":"Kaunas, Lithuania","address":{"@type":"PostalAddress","streetAddress":"Europos pr. 34-47","addressLocality":"Kaunas","postalCode":"LT-46370","addressCountry":"LT"},"sameAs":["https://github.com/faxlab","https://store.steampowered.com/search/?developer=FAXCORP","https://www.fab.com/sellers/FaxLab3D","https://www.youtube.com/@Cinema-Fax","https://www.artstation.com/faxlab3d","https://sketchfab.com/FaxLab3D","https://x.com/f4xc0rp"],"brand":[{"@type":"Brand","name":"SysCap"},{"@type":"Brand","name":"zoneq"},{"@type":"Brand","name":"Spline Architect"},{"@type":"Brand","name":"TopoTopo"}]}</script>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
-  <header class="top">
-    <div class="brand">FAXCORP</div>
-  </header>
+<div class="header">
+  <a class="brand" href="/">
+    <img src="/favicon.svg" width="40" height="40" alt="">
+    <span class="brand-name">FAXCORP<span class="brand-tag">Software, Unreal Engine tools and games &middot; Kaunas, Lithuania</span></span>
+  </a>
+  <div class="header-links"><a href="/products/">Products</a><a href="/games/">Games</a><a href="/company/#contact">Contact</a></div>
+</div>
 
-  <main>
+<div class="columns">
+<div class="side">
+  <div class="box"><div class="box-title">FAXCORP</div><div class="box-body"><ul>
+    <li class="current"><a href="/">Home</a></li>
+    <li><a href="/products/">Products</a></li>
+    <li><a href="/games/">Games</a></li>
+    <li><a href="/unreal/">Unreal Engine content</a></li>
+    <li><a href="/company/">Company</a></li>
+  </ul></div></div>
+  <div class="box"><div class="box-title">Products</div><div class="box-body"><ul>
+    <li><a href="https://syscap.net/">SysCap</a></li>
+    <li><a href="https://zoneq.app/">zoneq</a></li>
+    <li><a href="/products/#spline-architect">Spline Architect</a></li>
+    <li><a href="https://topotopo.dev/">TopoTopo</a></li>
+  </ul></div></div>
+  <div class="box"><div class="box-title">Elsewhere</div><div class="box-body"><ul>
+    <li><a href="https://store.steampowered.com/search/?developer=FAXCORP">Steam</a></li>
+    <li><a href="https://www.fab.com/sellers/FaxLab3D">Fab</a></li>
+    <li><a href="https://github.com/faxlab">GitHub</a></li>
+    <li><a href="https://www.youtube.com/@Cinema-Fax">YouTube</a></li>
+    <li><a href="https://www.artstation.com/faxlab3d">ArtStation</a></li>
+  </ul></div></div>
+  <div class="box"><div class="box-title">On Steam</div><div class="box-body">
+    <b>My Paper Plane Is Better</b><br>Coming November 2026<br>Free demo available<br><a href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/">Wishlist on Steam</a>
+  </div></div>
+</div>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="head"><h2>About</h2></div>
-      <p class="lead">FAXCORP is an independent one-person studio for real-time graphics - Unreal Engine tools, game environments and small games.</p>
-      <a class="key" href="/img/key.webp" target="_blank">
-        <img src="/img/key.webp" alt="Neon alley" width="1920" height="1080" fetchpriority="high">
-      </a>
-    </section>
+<div class="main">
+<h1>Real-time graphics software, Unreal Engine tools and games</h1>
 
-    <!-- GAMES -->
-    <section id="games">
-      <div class="head"><h2>Games</h2></div>
+<p>FAXCORP is a small independent software studio in Kaunas, Lithuania. We make desktop and web software, tools and content
+for Unreal Engine, and small games. Everything is designed, built and supported in-house.</p>
 
-      <div class="item">
-        <a class="shot" href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener"><img src="/img/my-paper-plane.webp" alt="My Paper Plane Is Better" loading="lazy"></a>
-        <div>
-          <h3>My Paper Plane Is Better</h3>
-          <p>Throw a paper plane through a city. Your flight becomes a track and everyone races your line. Free demo at Steam Next Fest, October 19-26.</p>
-          <div class="btns">
-            <a href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/" target="_blank" rel="noopener">Steam</a>
-          </div>
-        </div>
-      </div>
+<p>We have worked in real-time 3D since 2012, published Unreal Engine content since 2018 and released games on Steam since 2019.</p>
 
-      <div class="g">
-        <a href="https://store.steampowered.com/app/2230740/GAZOLINAS/" target="_blank" rel="noopener"><img src="/img/gazolinas.webp" alt="GAZOLINAS" loading="lazy"><span class="lbl">GAZOLINAS<small>Arcade racer · 2024</small></span></a>
-        <a href="https://store.steampowered.com/app/1368890/Hong_Kong_Obscure/" target="_blank" rel="noopener"><img src="/img/hong-kong-obscure.webp" alt="Hong Kong Obscure" loading="lazy"><span class="lbl">Hong Kong Obscure<small>VR · 2023</small></span></a>
-        <a href="https://store.steampowered.com/app/1819240/Short_Circuit/" target="_blank" rel="noopener"><img src="/img/short-circuit.webp" alt="Short Circuit" loading="lazy"><span class="lbl">Short Circuit<small>Free · 2023</small></span></a>
-        <a href="https://store.steampowered.com/app/905390/Drone_Spektra/" target="_blank" rel="noopener"><img src="/img/drone-spektra.webp" alt="Drone Spektra" loading="lazy"><span class="lbl">Drone Spektra<small>Drone sim · 2019</small></span></a>
-      </div>
-    </section>
+<h2>Products</h2>
 
-    <!-- TOOLS -->
-    <section id="tools">
-      <div class="head"><h2>Tools</h2></div>
+<div class="entry">
+  <a class="shot" href="https://syscap.net/"><img src="/img/syscap.webp" alt="SysCap" width="160" height="90"></a>
+  <div class="text">
+    <h3><a href="https://syscap.net/">SysCap</a></h3>
+    <p class="meta">Windows 10 and 11 &middot; Open beta</p>
+    <p>A disk, process and network navigator. It draws a folder or a whole drive as a live 3D map and shows which programs use it and where they connect.</p>
+  </div>
+</div>
 
-      <div class="item">
-        <a class="shot" href="https://zoneq.app" target="_blank" rel="noopener"><img src="/img/zoneq.webp" alt="zoneq" loading="lazy"></a>
-        <div>
-          <h3>zoneq</h3>
-          <p>Audio-reactive visual sequencer. Build shader patches, publish with a link, run it in the browser, as a desktop wallpaper or as an OBS source.</p>
-          <div class="btns"><a href="https://zoneq.app" target="_blank" rel="noopener">zoneq.app</a></div>
-        </div>
-      </div>
+<div class="entry">
+  <a class="shot" href="https://zoneq.app/"><img src="/img/zoneq.webp" alt="zoneq" width="160" height="90"></a>
+  <div class="text">
+    <h3><a href="https://zoneq.app/">zoneq</a></h3>
+    <p class="meta">Web, Windows &middot; Preview</p>
+    <p>An audio-reactive visual sequencer. Build shader patches, share them with a link, and run them in the browser, as a desktop wallpaper or as an OBS source.</p>
+  </div>
+</div>
 
-      <div class="item">
-        <a class="shot" href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener"><img src="/img/spline-architect.webp" alt="Spline Architect" loading="lazy"></a>
-        <div>
-          <h3>Spline Architect</h3>
-          <p>Unreal Engine plugin for building along splines: walls, buildings, curves, street networks and PCG-ready city data.</p>
-          <div class="btns">
-            <a href="https://www.fab.com/listings/356b1d13-5080-4418-893d-5a39546bc276" target="_blank" rel="noopener">Get on Fab</a>
-            <a href="https://faxlab.github.io/spline-architect-docs/" target="_blank" rel="noopener">Docs</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="entry">
+  <a class="shot" href="/products/#spline-architect"><img src="/img/spline-architect.webp" alt="Spline Architect" width="160" height="90"></a>
+  <div class="text">
+    <h3><a href="/products/#spline-architect">Spline Architect</a></h3>
+    <p class="meta">Unreal Engine 5.5 to 5.8 plugin &middot; Version 6</p>
+    <p>Build along splines in the Unreal editor: walls, buildings, curves, street networks and PCG-ready city data.</p>
+  </div>
+</div>
 
-  </main>
+<div class="entry">
+  <a class="shot" href="https://topotopo.dev/"><img src="/img/topotopo.webp" alt="TopoTopo" width="160" height="90"></a>
+  <div class="text">
+    <h3><a href="https://topotopo.dev/">TopoTopo</a></h3>
+    <p class="meta">Open source, Apache-2.0</p>
+    <p>A procedural geometry engine. Geometry is a node graph in JSON, cooked headless and exported to Unreal, Blender and Houdini.</p>
+  </div>
+</div>
 
-  <footer id="links">
-    <div class="links">
-      <!--email_off--><a href="mailto:hello@faxcorp.dev">hello@faxcorp.dev</a><!--/email_off-->
-      <a href="https://www.fab.com/sellers/FaxLab3D" target="_blank" rel="noopener">Fab</a>
-      <a href="https://store.steampowered.com/search/?developer=FAXCORP" target="_blank" rel="noopener">Steam</a>
-      <a href="https://github.com/faxlab" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.artstation.com/faxlab3d" target="_blank" rel="noopener">ArtStation</a>
-      <a href="https://sketchfab.com/FaxLab3D" target="_blank" rel="noopener">Sketchfab</a>
-      <a href="https://www.youtube.com/@Cinema-Fax" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://insertnocoins.itch.io" target="_blank" rel="noopener">itch.io</a>
-      <a href="https://x.com/f4xc0rp" target="_blank" rel="noopener">X</a>
-    </div>
-    <div class="legal">
-      <span>© 2026 MB „Faxcorp“</span>
-      <span><a href="/company/">Company details</a></span>
-      <span><a href="/paperplane/privacy/">Privacy</a></span>
-    </div>
-  </footer>
+<h2>Games</h2>
 
+<div class="callout">
+  <span><b>My Paper Plane Is Better</b> - throw a paper plane through a city; every run you finish becomes a track that others race. Coming to Steam in November 2026.</span>
+  <a class="button" href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/">Free demo</a>
+</div>
+
+<p>Earlier games: <a href="https://store.steampowered.com/app/2230740/GAZOLINAS/">GAZOLINAS</a>,
+<a href="https://store.steampowered.com/app/1368890/Hong_Kong_Obscure/">Hong Kong Obscure</a>,
+<a href="https://store.steampowered.com/app/1819240/Short_Circuit/">Short Circuit</a> and
+<a href="https://store.steampowered.com/app/905390/Drone_Spektra/">Drone Spektra</a>. <a href="/games/">All games &raquo;</a></p>
+
+<h2>News</h2>
+<dl class="news">
+  <dt><span class="date">24 October 2026</span> SysCap 0.15.1</dt>
+  <dd>The current open beta release. <a href="https://syscap.net/history.html">What's new &raquo;</a></dd>
+  <dt><span class="date">19 October 2026</span> My Paper Plane Is Better demo</dt>
+  <dd>The free demo is on Steam and took part in Steam Next Fest, 19 to 26 October. <a href="https://store.steampowered.com/app/2765870/My_Paper_Plane_Is_Better/">Steam page &raquo;</a></dd>
+  <dt><span class="date">15 October 2026</span> TopoTopo is open source</dt>
+  <dd>The procedural geometry engine is public on GitHub and npm under the Apache-2.0 license. <a href="https://topotopo.dev/">topotopo.dev &raquo;</a></dd>
+  <dt><span class="date">7 September 2026</span> Spline Architect 6</dt>
+  <dd>Unreal Engine 5.8 support, street networks and a city example project. <a href="https://faxlab.github.io/spline-architect-docs/">Documentation &raquo;</a></dd>
+</dl>
+
+</div>
+</div>
+
+<div class="footer">Copyright &copy; 2026 MB &bdquo;Faxcorp&ldquo;. All rights reserved. &middot; <a href="/company/">Company details</a> &middot; This site sets no cookies and uses no tracking.</div>
 </div>
 </body>
 </html>
