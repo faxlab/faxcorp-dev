@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FAXCORP">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://faxcorp.dev/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@f4xc0rp">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+{{jsonld}}
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/favicon.svg" alt=""><span>FAXCORP</span></a>
+    <nav class="nav">
+      <a data-nav="games" href="/games/">Games</a>
+      <a data-nav="products" href="/products/">Products</a>
+      <a data-nav="unreal" href="/unreal/">Unreal</a>
+      <a data-nav="company" href="/company/">Company</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+{{content}}
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 MB &bdquo;Faxcorp&ldquo; &middot; <a href="/company/">Company details</a></span>
+    <nav>
+      <a href="https://store.steampowered.com/search/?developer=FAXCORP">Steam</a>
+      <a href="https://www.fab.com/sellers/FaxLab3D">Fab</a>
+      <a href="https://github.com/faxlab">GitHub</a>
+      <a href="https://www.youtube.com/@fax-lab-3d">YouTube</a>
+      <a href="https://www.artstation.com/faxlab3d">ArtStation</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
