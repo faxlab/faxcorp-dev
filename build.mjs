@@ -25,7 +25,7 @@ const orgSchema = JSON.stringify({
     "https://github.com/faxlab",
     "https://store.steampowered.com/search/?developer=FAXCORP",
     "https://www.fab.com/sellers/FaxLab3D",
-    "https://www.youtube.com/@Cinema-Fax",
+    "https://www.youtube.com/@fax-lab-3d",
     "https://www.artstation.com/faxlab3d",
     "https://sketchfab.com/FaxLab3D",
     "https://x.com/f4xc0rp",
