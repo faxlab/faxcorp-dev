@@ -28,7 +28,7 @@ const orgSchema = JSON.stringify({
     "https://www.youtube.com/@fax-lab-3d",
     "https://www.artstation.com/faxlab3d",
     "https://sketchfab.com/FaxLab3D",
-    "https://x.com/f4xc0rp",
+    "https://x.com/faxcorpdev",
   ],
   brand: ["SysCap", "zoneq", "Spline Architect", "TopoTopo"].map((name) => ({ "@type": "Brand", name })),
 });
